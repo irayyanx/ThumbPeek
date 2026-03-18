@@ -1,0 +1,31 @@
+{
+  "manifest_version": 2,
+  "name": "ThumbPeek",
+  "version": "1.0.0",
+  "description": "Adds a 'Open Thumbnail' option to the right-click context menu on YouTube video links and thumbnails.",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "background": {
+    "scripts": [
+      "background.js"
+    ]
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.youtube.com/*"
+      ],
+      "js": [
+        "content.js"
+      ]
+    }
+  ],
+  "permissions": [
+    "contextMenus",
+    "tabs",
+    "*://*.youtube.com/*"
+  ]
+}
